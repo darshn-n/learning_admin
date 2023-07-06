@@ -24,7 +24,6 @@ class _SellerFormVideosState extends State<SellerFormVideos> {
   String postID = const Uuid().v1();
   final _linkController = TextEditingController();
   final _textController = TextEditingController();
-  final _idController = TextEditingController();
 
   validate(CategoryProvider provider) {
     if (_formKey.currentState!.validate()) {
@@ -34,7 +33,6 @@ class _SellerFormVideosState extends State<SellerFormVideos> {
             'category': provider.selectedCategory,
             'link': _linkController.text,
             'text': _textController.text,
-            'id': _idController.text,
             'postID': postID
           },
         );
@@ -152,23 +150,6 @@ class _SellerFormVideosState extends State<SellerFormVideos> {
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: "Masked Text*",
-                    ),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Please enter the required Field";
-                      }
-                      return null;
-                    },
-                  ),
-                  const SizedBox(
-                    height: 20.0,
-                  ),
-                  TextFormField(
-                    controller: _idController,
-                    keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: "ID*",
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
