@@ -76,14 +76,13 @@ class ProductList extends StatelessWidget {
                   physics: const ScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 200,
-                    childAspectRatio: 2 / 2.8,
+                    childAspectRatio: 1.3 / 2.8,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                   ),
                   itemCount: snapshot.data!.size,
                   itemBuilder: (BuildContext context, int index) {
                     var data = snapshot.data!.docs[index];
-                    var id = int.parse(data['id']);
 
                     // Display Card:
                     return ProductDisplayCard(
